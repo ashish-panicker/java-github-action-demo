@@ -26,7 +26,7 @@ pipeline {
         stage('Build') {
             steps {
                 // maven command to clean and package the project
-                sh 'mvn clean install -DskipTests'
+                bat 'mvn clean install -DskipTests'
             }
         }
 
@@ -34,7 +34,7 @@ pipeline {
         stage('Test') {
             steps {
                 // maven command to run the test cases
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
 
@@ -42,7 +42,7 @@ pipeline {
         stage('Package') {
             steps {
                 // maven command to package the application
-                sh 'mvn package'
+                bat 'mvn package'
             }
         }
     } // end of stages
